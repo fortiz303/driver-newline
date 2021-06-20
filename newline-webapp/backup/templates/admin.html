@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Teeny House - Admin page</title>
+
+  <h1 style="margin-left: 20px; font-weight: 900; font-size: 50px;">Admin Login</h1>
+</head>
+<body>
+  <div class="login_form">
+  <h3>Login</h3>
+  <form id="login" action="/admin" method="POST">
+    <p>Username</p>
+    <input type="text" name="user" id="user"/>
+    <p>Password</p>
+    <input type="password" name="pass" id="pass"/>
+  </form>
+  
+  <button form="login" class="login_btn">log in</button>
+  <div class="errrors"><h3>{{errors}}</h3></div>
+  </div>
+</body>
+<style>
+  body {
+    background: #121212;
+    font-family: 'Lato', sans-serif;
+    color: #FFFFFF;
+  }
+
+  input {
+    background-color: #292929;
+    color: #FFFFFF;
+  }
+
+  .errors {
+    color: red !important;
+  }
+  
+
+  .login_form {
+    position: absolute;
+    left: 20px;
+  }
+
+  .login_btn {
+  --p: 0;
+  --q: calc(1 - var(--p));
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
+  width: 12em;
+  background: #fff;
+  color: #000;
+  font: 700 1.125em/ 3 trebuchet ms, sans-serif;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-top: 50px;
+}
+
+.login_btn:before, .login_btn:after {
+  --i: var(--p);
+  --j: calc(1 - var(--i));
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: calc(var(--j)*(100% - 12.36932em));
+  width: 12.36932em;
+  transform-origin: calc(var(--j)*100%) calc(var(--i)*100%);
+  transform: rotate(-14.03624deg) translate(calc(var(--q)*(1 - 2*var(--i))*-100%));
+  box-shadow: 0 0 0 1px currentcolor;
+  background: currentcolor;
+  color: #ffee57;
+  transition: transform .5s ease-in-out;
+  content: "";
+}
+.login_btn:after {
+  --i: var(--q);
+}
+.login_btn:hover, .login_btn:focus {
+  --p: 1;
+}
+</style>
+</html>

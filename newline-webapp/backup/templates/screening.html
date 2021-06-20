@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Teeny House - Add Candidate</title>
+  <h1 style="margin-left: 20px; font-weight: 900; font-size: 50px;">Candidate database</h1>
+</head>
+<body>
+
+<div class="login_form">
+  <h3>Add Candidate</h3>
+  <form id="add" action="/admin" method="POST">
+
+    <p>Name</p>
+    <input type="text" name="name" id="name"/>
+
+    <p>Years Driving?</p>
+    <input type="number" name="experience" id="experience" min="0"/>
+    
+    <p>Points in the last 3 years</p>
+    <input type="number" name="points" id="points" min="0"/>
+
+    <p>Equipment Driven</p>
+    <input type="text" name="equipment" id="equipment"/>
+
+    <p>Valid medical card?</p>
+    <label for="yes">Yes</label>
+    <input type="radio" name="medical" id="yes" value="yes"><br>
+    <label for="no">No</label>
+    <input type="radio" name="medical" id="no" value="no"><br>
+
+    <p>Manual transmission?</p>
+    <label for="yes">Yes</label>
+    <input type="radio" name="manual" id="yes" value="yes"><br>
+    <label for="no">No</label>
+    <input type="radio" name="manual" id="no" value="no"><br>
+
+    <p>Availability</p>
+    <label for="nights">Nights?</label>
+    <input type="checkbox" name="nights" id="nights" value="nights"><br>
+
+    <label for="saturdays">Saturdays?</label>
+    <input type="checkbox" name="saturdays" id="saturdays" value="saturdays"><br>
+
+    <label for="sundays">Sundays?</label>
+    <input type="checkbox" name="sundays" id="sundays" value="sundays"><br>
+
+    <label for="local">Local?</label>
+    <input type="checkbox" name="local" id="local" value="local"><br>
+    
+    <label for="regional">Regional?</label>
+    <input type="checkbox" name="regional" id="regional" value="regional"><br>
+
+    <p>How soon can start?</p>
+    <input type="date" name="soon" id="soon"/>
+
+    <p>Notes</p>
+    <input type="text" name="notes" id="notes"/>
+  </form>
+  </div>
+  <div class="text1"><button form="add" class="add_btn">add candidate</button></div>
+  <div class="errrors"><h3>{{errors}}</h3></div>
+  
+<!--
+	<div class="demo">
+		<label class="toggle" for="uniqueID">
+			<input type="checkbox" class="toggle__input" id="uniqueID" />
+			<span class="toggle-track">
+				<span class="toggle-indicator">
+					<span class="checkMark">
+						<svg viewBox="0 0 24 24" id="ghq-svg-check" role="presentation" aria-hidden="true">
+							<path d="M9.86 18a1 1 0 01-.73-.32l-4.86-5.17a1.001 1.001 0 011.46-1.37l4.12 4.39 8.41-9.2a1 1 0 111.48 1.34l-9.14 10a1 1 0 01-.73.33h-.01z"></path>
+						</svg>
+					</span>
+				</span>
+			</span>
+			Enabled toggle label
+		</label>
+	</div>
+-->
+
+
+</body>
+<style>
+ body {
+    background: #121212;
+    font-family: 'Lato', sans-serif;
+    color: #FFFFFF;
+  }
+
+  input {
+    background-color: #292929;
+    color: #FFFFFF;
+  }
+
+    .add_btn {
+  --p: 0;
+  --q: calc(1 - var(--p));
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  width: 12em;
+  background: #fff;
+  color: #000;
+  font: 700 1.125em/ 3 trebuchet ms, sans-serif;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-top: 30px;
+}
+
+.add_btn:before, .add_btn:after {
+  --i: var(--p);
+  --j: calc(1 - var(--i));
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: calc(var(--j)*(100% - 12.36932em));
+  width: 12.36932em;
+  transform-origin: calc(var(--j)*100%) calc(var(--i)*100%);
+  transform: rotate(-14.03624deg) translate(calc(var(--q)*(1 - 2*var(--i))*-100%));
+  box-shadow: 0 0 0 1px currentcolor;
+  background: currentcolor;
+  color: #ffee57;
+  transition: transform .5s ease-in-out;
+  content: "";
+}
+.add_btn:after {
+  --i: var(--q);
+}
+.add_btn:hover, .add_btn:focus {
+  --p: 1;
+}
+</style>
+</html>
+
